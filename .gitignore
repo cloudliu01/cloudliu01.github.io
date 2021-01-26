@@ -3,4 +3,5 @@ Thumbs.db
 *.log
 .deploy*/
 .vscode/
+/public
 /node_modules
