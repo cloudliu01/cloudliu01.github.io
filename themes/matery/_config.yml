@@ -165,11 +165,12 @@ postCalendar: true
 gitalk:
   enable: true
   owner: fernandozhaxi
-  repo: fernandozhaxi
+  admin: fernandozhaxi
+  repo: fernandozhaxi/judgemeplease
+  distractionFreeMode: true
   oauth:
-    clientId:
-    clientSecret:
-  admin:
+    clientId: 951d3435460648ad144d
+    clientSecret: f22049a1bd993a91763d069c1de665f5041f308b
 
 # Whether to display fork me on github icon and link, default true, You can change it to your repo address
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.

@@ -7,15 +7,15 @@
 
 <script src="<%- theme.libs.js.gitalk %>"></script>
 <script>
+    var title = location.pathname.substr(0, 50);
     let gitalk = new Gitalk({
         clientID: '<%- theme.gitalk.oauth.clientId %>',
         clientSecret: '<%- theme.gitalk.oauth.clientSecret %>',
         repo: '<%- theme.gitalk.repo %>',
         owner: '<%- theme.gitalk.owner %>',
-        admin: <%- JSON.stringify(theme.gitalk.admin) %>,
-        id: '<%- page.path %>',
+        admin: ['<%- theme.gitalk.admin %>'],
+        id: title,
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
-
     gitalk.render('gitalk-container');
 </script>
