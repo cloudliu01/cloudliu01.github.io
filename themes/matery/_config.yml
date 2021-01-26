@@ -166,7 +166,7 @@ gitalk:
   enable: true
   owner: fernandozhaxi
   admin: fernandozhaxi
-  repo: fernandozhaxi/judgemeplease
+  repo: judgemeplease
   distractionFreeMode: true
   oauth:
     clientId: 951d3435460648ad144d
