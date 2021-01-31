@@ -5,5 +5,5 @@ type: "contact"
 layout: "contact"
 ---
 
-# 欢迎留言
-大家有任何问题，都可以在评论区给我留言
+# Comments are always welcome
+Any question or problem, please let me know. Thanks

@@ -16,7 +16,9 @@
 
 ### 一、如需要在本地手动构建并部署博客站点，必须按照如下步骤安装环境
 
-需要在 `develop` 分支。
+需要在 `source` 分支。
+
+git checkout -b source origin/source
 
 - 1、安装 Node.js
 - 2、安装 `Hexo`
@@ -75,7 +77,7 @@ source 分支 push 代码，会触发 github 的 actions 自动构建静态博�
 
 ## 写文章
 
-添加文章需要在 `develop` 分支上，不能在 main 分支
+添加文章需要在 `source` 分支上，不能在 main 分支
 
 ## 方式一：到`\source\_posts`目录新建 `md` 文件，编辑文章内容即可
 
@@ -84,3 +86,7 @@ source 分支 push 代码，会触发 github 的 actions 自动构建静态博�
 命令行输入：`hexo new post "article title"`
 
 即可在`\source\_posts`目录下生成一篇文章
+
+
+Note:
+Stuff in public folder are generated, no need to customize

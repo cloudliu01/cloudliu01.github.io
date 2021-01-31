@@ -61,11 +61,11 @@ indexbtn:
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
-  qq:
-  github: github.com
-  weibo: weibo.com
-  email: xxx@gmail.com
-  zhihu: zhihu.com
+  qq: 2776160
+  github: cloudliu01
+  #weibo: weibo.com
+  email: cloudliu01@gmail.com
+  #zhihu: zhihu.com
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # You can add `toc: false` to the Front-matter of a post to turn off the TOC.
@@ -83,8 +83,8 @@ code:
 
 # 是否激活文章末尾的打赏功能，默认激活（你替换为的你自己的微信、支付宝二维码图片、或者使用网络图片也可以）.
 reward:
-  enable: false
-  title: 写作不易，客官能否打赏一杯奶茶？
+  enable: true
+  title: Donate？
   wechat: /medias/reward/xxx.png
   alipay: /medias/reward/xxx.jpg
 
@@ -94,7 +94,8 @@ reward:
 copyright:
   enable: true
   minCharNumber: 120 # 至少复制多少个字符就追加版权信息.
-  description: 本文章著作权归作者所有，任何形式的转载都请注明出处。
+  description: The author reserve all rights. The origin must be included for any citation or reference!
+  #description: 本文章著作权归作者所有，任何形式的转载都请注明出处。
 
 # Whether to activate the mathjax, this is a global configuration, but the post still does not open the mathjax rendering.
 # Considering that the mathjax loading is time consuming,
@@ -131,8 +132,8 @@ text:
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
   avatar: /favicon.ico
-  career: 职业
-  introduction: 简介
+  career: Integrated Circuit Computer-Aid Design (IC CAD) Engineer 
+  introduction: Experienced CAD engineer 
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
@@ -164,13 +165,13 @@ postCalendar: true
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
   enable: true
-  owner: fernandozhaxi
-  admin: fernandozhaxi
-  repo: judgemeplease
+  owner: cloudliu01
+  admin: cloudliu01
+  repo: blog_comments
   distractionFreeMode: true
   oauth:
-    clientId: 951d3435460648ad144d
-    clientSecret: f22049a1bd993a91763d069c1de665f5041f308b
+    clientId: 9b359bb803fb7d13f56a
+    clientSecret: 698d6ed768b113ca5dac01fa8439a8f35d0369a7
 
 # Whether to display fork me on github icon and link, default true, You can change it to your repo address
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
@@ -187,8 +188,8 @@ githubLink:
 # 请注意：为了保证密码原文不会被泄露到网页中，文章的密码必须是通过'SHA256'加密的，这样就不会被破解.
 verifyPassword:
   enable: true
-  promptMessage: 请输入访问本文章的密码
-  errorMessage: 密码错误，将返回主页！
+  promptMessage: Please type in the password for this article! Or to contact the owner of cloudliu01.github.com to get one
+  errorMessage: Wrong password typed in ... go back to main!
 
 # busuanzi(http://busuanzi.ibruce.info/) website statistics
 # 不蒜子(http://busuanzi.ibruce.info/) 网站统计
@@ -201,7 +202,7 @@ busuanziStatistics:
 # 添加 Google Analytics 配置
 googleAnalytics:
   enable: false
-  id: 查教程获取
+  id: Check the User Manual to get the detail
 
 # The used front-end library can be replaced with the corresponding CDN address as needed,
 # If the specific version is not specified below, you can use the latest version.
@@ -297,3 +298,11 @@ reprint:
 # 雪花特效
 snow:
   enable: false
+
+# Emoji support
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
