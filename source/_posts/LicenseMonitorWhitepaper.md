@@ -12,12 +12,12 @@ tags: License Monitor Whitepaper
 categories: Whitepapers
 ---
 
-# License Monitor 白皮书
+# License Monitor 白皮书 #
 
-## 项目背景
+## 项目背景 ##
 在专业的设计领域，比如建筑，芯片，医学，都在上世纪末本世纪初经历了一个盗版横行的年代。一部分的原因是正版软件高昂的授权费用，另一部分原因是国内相关企业处于原始积累阶段，没有足够利润去支撑正版授权。随着时代的进步，国内相关行业的崛起，盗版高昂的试错成本，以及政府的支持，越来越多的公司开始选用正版软件。
 
-## 商业软件授权方式
+## 商业软件授权方式 ##
 {% asset_img 1.png License Types %}
 现在商业软件的正版授权有多种类型
 * Local
@@ -30,25 +30,32 @@ categories: Whitepapers
 
 除了以上的分类方式外，您可以在永久（Perpetual）许可证和年度许可证之间进行选择。 对于永久许可，通常需要一年的维护，续订折扣不大；对于年度许可证则没有任何续期，过期后必须购买新许可证，但新许可证一般会给很大折扣。对于需要持续更新和支持的软件，建议选用后一种方式。
 
-## FlexLM
+## FlexLM ##
     FLEXlm软件是一种在专业软件（如 EDA）行业的license管理解决方案，可让软件供应商对客户可用的软件数量加以限制。 FLEXlm支持不同的许可策略，例如Floating和N-locked许可。 这种软件系统也称为DRM（数字版权管理）解决方案。 FLEXlm最初是1988年由GLOBEtrotter软件和Highland Software共同开发的。后来，Globetrotter在2000年被Macrovision收购，并将其更名为FlexNet。 在2008年，该公司被出售给Acresso Software，并更名为Flexera。 该产品名为Flexera FlexNet Publisher，但仍被广泛称为FlexLM。 2011年，加拿大教师私人资本基金收购了Flexera。 [2]
 
-## 商业现状
+## 商业现状 ##
 Floating license被广泛应用于公司环境中的高价值应用程序，例如半导体工业的电子设计自动化工具的标准license管理模式。在这些使用环境中，每个license * feature * count 的价格少则上千，多则上万。对一个有上百人的设计公司，所要购买的license的价值常常是以百万美金计。因此，如何提高license的使用效率，避免浪费成为一个必须要考虑的问题。
 因为国内正版市场还不成熟，提高license的效率更是一个很少人考虑的问题；同时，市面上能监控和管理这种floating license的工具又非常少，因此在是一个相对有前景的商业机会。
 
-## 项目价值
+## 项目价值 ##
 本软件可以帮助使用FlexLM centralized方式来管理license的公司客户监控license的使用情况，从而合理地采购和分配license提高使用效率，最终达到有效管理并降低运营成本的目的
 
-## 项目结构
+## 项目结构 ##
 * lmstat parser
 * log parser
 * test database & case generator
 * database
 * viewer
-## 项目开发规划
-## 团队人员
-## 相关链接
+
+### lmstat parser ###
+### log parser ###
+### test database & case generator ###
+### database ###
+### viewer ###
+
+## 项目开发规划 ##
+## 团队人员 ##
+## 相关链接 ##
 
 1. Scholten, Thomas. "Software Licensing". Retrieved 21 May 2012.
 2, https://en.wikipedia.org/wiki/FlexNet_Publisher
