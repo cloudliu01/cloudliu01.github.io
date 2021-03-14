@@ -54,7 +54,7 @@ Floating license被广泛应用于公司环境中的高价值应用程序，例�
    * 配置文件来存储所有的mock server host，feature，user，client etc信息
    * 定义某种随机方式来产生一个在制定时间范围内的测试数据（从时间0开始，随机地根据产生checkout和checkin的动作，并把这些动作记录到一个SQLite数据库）
    * 从这个数据库产生一个log文件作为测试log parser的测试数据
-   * 定义一个接口，如mock_lmstat(SQLite_db_file, time_ns)，来模拟lmstat的输出，作为测试lmstat parser的测试样本
+   * 定义一个接口，如mock_lmstat(SQLite\_db\_file, time\_ns)，来模拟lmstat的输出，作为测试lmstat parser的测试样本
 2. 余下的部分可以并行开发而互不影响。
 
 ## 团队人员 ##
