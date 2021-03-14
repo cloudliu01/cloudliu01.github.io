@@ -41,17 +41,11 @@ Floating license被广泛应用于公司环境中的高价值应用程序，例�
 本软件可以帮助使用FlexLM centralized方式来管理license的公司客户监控license的使用情况，从而合理地采购和分配license提高使用效率，最终达到有效管理并降低运营成本的目的
 
 ## 项目结构 ##
-* lmstat parser
-* log parser
-* test database & case generator
-* database
-* viewer
-
-### lmstat parser ###
-### log parser ###
-### test database & case generator ###
-### database ###
-### viewer ###
+* lmstat parser - 执行lmstat命令从服务器得到当前license使用的情况。
+* log parser - 读入并分析license log文件。
+* test database & case generator - 产生测试用的lmstat和log文件用于开发调试。
+* database - 后台数据库，用于保存lmstat和log parsers的输出数据便于viewer查询使用
+* viewer - 用户界面，用于和后台数据库交互，显示用户所需信息
 
 ## 项目开发规划 ##
 ## 团队人员 ##
