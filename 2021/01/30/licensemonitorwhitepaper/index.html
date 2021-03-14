@@ -371,14 +371,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.4k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    4 Min
+                    5 Min
                 </div>
                 
                 
@@ -407,15 +407,33 @@
 <p>除了以上的分类方式外，您可以在永久（Perpetual）许可证和年度许可证之间进行选择。 对于永久许可，通常需要一年的维护，续订折扣不大；对于年度许可证则没有任何续期，过期后必须购买新许可证，但新许可证一般会给很大折扣。对于需要持续更新和支持的软件，建议选用后一种方式。</p>
 <h2 id="FlexLM"><a href="#FlexLM" class="headerlink" title="FlexLM"></a>FlexLM</h2><pre><code>FLEXlm软件是一种在专业软件（如 EDA）行业的license管理解决方案，可让软件供应商对客户可用的软件数量加以限制。 FLEXlm支持不同的许可策略，例如Floating和N-locked许可。 这种软件系统也称为DRM（数字版权管理）解决方案。 FLEXlm最初是1988年由GLOBEtrotter软件和Highland Software共同开发的。后来，Globetrotter在2000年被Macrovision收购，并将其更名为FlexNet。 在2008年，该公司被出售给Acresso Software，并更名为Flexera。 该产品名为Flexera FlexNet Publisher，但仍被广泛称为FlexLM。 2011年，加拿大教师私人资本基金收购了Flexera。 [2]</code></pre><h2 id="商业现状"><a href="#商业现状" class="headerlink" title="商业现状"></a>商业现状</h2><p>Floating license被广泛应用于公司环境中的高价值应用程序，例如半导体工业的电子设计自动化工具的标准license管理模式。在这些使用环境中，每个license * feature * count 的价格少则上千，多则上万。对一个有上百人的设计公司，所要购买的license的价值常常是以百万美金计。因此，如何提高license的使用效率，避免浪费成为一个必须要考虑的问题。<br>因为国内正版市场还不成熟，提高license的效率更是一个很少人考虑的问题；同时，市面上能监控和管理这种floating license的工具又非常少，因此在是一个相对有前景的商业机会。</p>
 <h2 id="项目价值"><a href="#项目价值" class="headerlink" title="项目价值"></a>项目价值</h2><p>本软件可以帮助使用FlexLM centralized方式来管理license的公司客户监控license的使用情况，从而合理地采购和分配license提高使用效率，最终达到有效管理并降低运营成本的目的</p>
-<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><ul>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>项目可以划分为5个相对独立的模块，每个模块的功能如下所示：</p>
+<ul>
+<li>test database &amp; case generator - 产生测试用的lmstat和log文件用于开发调试。</li>
 <li>lmstat parser - 执行lmstat命令从服务器得到当前license使用的情况。</li>
 <li>log parser - 读入并分析license log文件。</li>
-<li>test database &amp; case generator - 产生测试用的lmstat和log文件用于开发调试。</li>
-<li>database - 后台数据库，用于保存lmstat和log parsers的输出数据便于viewer查询使用</li>
+<li>database model - 后台数据库，用于保存lmstat和log parsers的输出数据便于viewer查询使用</li>
 <li>viewer - 用户界面，用于和后台数据库交互，显示用户所需信息</li>
 </ul>
-<h2 id="项目开发规划"><a href="#项目开发规划" class="headerlink" title="项目开发规划"></a>项目开发规划</h2><h2 id="团队人员"><a href="#团队人员" class="headerlink" title="团队人员"></a>团队人员</h2><h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ol>
-<li>Scholten, Thomas. “Software Licensing”. Retrieved 21 May 2012.<br>2, <a href="https://en.wikipedia.org/wiki/FlexNet_Publisher" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/FlexNet_Publisher</a><br>3, <a href="https://en.wikipedia.org/wiki/Floating_licensing" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Floating_licensing</a></li>
+<h2 id="项目开发规划"><a href="#项目开发规划" class="headerlink" title="项目开发规划"></a>项目开发规划</h2><p>项目总体可以分为两个阶段开发：</p>
+<ol>
+<li>test database &amp; case generator。应用实际的lmgrd服务来产生测试所需的lmstat和log不仅繁琐，而且很难覆盖到所有可能的情况，因此需要根据已有的lmstat和log的示例为参考，写出一个模块能自动产生一些mock的lmstat和log输出。<ul>
+<li>配置文件来存储所有的mock server host，feature，user，client etc信息</li>
+<li>定义某种随机方式来产生一个在制定时间范围内的测试数据（从时间0开始，随机地根据产生checkout和checkin的动作，并把这些动作记录到一个SQLite数据库）</li>
+<li>从这个数据库产生一个log文件作为测试log parser的测试数据</li>
+<li>定义一个接口，如mock_lmstat(SQLite_db_file, time_ns)，来模拟lmstat的输出，作为测试lmstat parser的测试样本</li>
+</ul>
+</li>
+<li>余下的部分可以并行开发而互不影响。</li>
+</ol>
+<h2 id="团队人员"><a href="#团队人员" class="headerlink" title="团队人员"></a>团队人员</h2><ul>
+<li><a href="mailto:cloudliu01@gmail.com" target="_blank" rel="noopener">cloudliu01@gmail.com</a></li>
+<li>ds2812.github.io</li>
+</ul>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ol>
+<li>Scholten, Thomas. “Software Licensing”. Retrieved 21 May 2012.</li>
+<li><a href="https://en.wikipedia.org/wiki/FlexNet_Publisher" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/FlexNet_Publisher</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Floating_licensing" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Floating_licensing</a></li>
 </ol>
 
             </div>
@@ -783,7 +801,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;Word count:&nbsp;
-            <span class="white-color">5.7k</span>
+            <span class="white-color">5.9k</span>
             
 
             <!-- <br>
